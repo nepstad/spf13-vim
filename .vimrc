@@ -90,6 +90,7 @@
     set mouse=a                 " Automatically enable mouse usage
     set mousehide               " Hide the mouse cursor while typing
     scriptencoding utf-8
+    set encoding=utf-8
 
     if has ('x') && has ('gui') " On Linux use + register for copy-paste
         set clipboard=unnamedplus
@@ -775,7 +776,7 @@
         " Use the powerline theme and optionally enable powerline symbols.
         " To use the symbols , , , , , , and .in the statusline
         " segments add the following to your .vimrc.before.local file:
-        "   let g:airline_powerline_fonts=1
+        let g:airline_powerline_fonts=1
         " If the previous symbols do not render for you then install a
         " powerline enabled font.
         let g:airline_theme = 'powerlineish'
@@ -784,6 +785,7 @@
             let g:airline_left_sep='›'  " Slightly fancier than '>'
             let g:airline_right_sep='‹' " Slightly fancier than '<'
         endif
+        let g:airline#extensions#tabline#enabled = 1
     " }
 
     " vim-gitgutter {
@@ -800,7 +802,7 @@
         set guioptions-=T           " Remove the toolbar
         set lines=40                " 40 lines of text instead of 24
         if has("gui_gtk2")
-            set guifont=Monospace
+            set guifont=Inconsolata\ for\ Powerline
         elseif has("gui_mac")
             set guifont=Andale\ Mono\ Regular:h16,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
         elseif has("gui_win32")
